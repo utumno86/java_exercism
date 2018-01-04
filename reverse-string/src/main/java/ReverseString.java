@@ -5,11 +5,10 @@ class ReverseString {
           return "";
         }
         char[] chars = inputString.toCharArray();
-        String outputString;
-        for (int i = chars.length; i > 0; i--){
-          System.out.println Character.toString(chars[i]);
+        StringBuilder reversedString = new StringBuilder(inputString.length());
+        for (int i = chars.length - 1; i >= 0; i--){
+          reversedString.append(Character.toString(chars[i]));
         }
-        return "tobor";
+        return reversedString.toString();
     }
-
 }
