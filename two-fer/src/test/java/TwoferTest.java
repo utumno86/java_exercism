@@ -21,7 +21,6 @@ public class TwoferTest {
         assertEquals(expected, twofer.twofer(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aNameGiven() {
         String input = "Alice";
@@ -30,21 +29,11 @@ public class TwoferTest {
         assertEquals(expected, twofer.twofer(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void anotherNameGiven() {
         String input = "Bob";
         String expected = "One for Bob, one for me.";
 
         assertEquals(expected, twofer.twofer(input));
-    }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void emptyStringGiven() {
-        String input = "";
-        String expected = "One for , one for me.";
-
-        assertEquals(expected, twofer.twofer(input) );
     }
 }
