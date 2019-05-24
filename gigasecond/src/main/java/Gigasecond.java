@@ -3,15 +3,15 @@ import java.time.LocalDateTime;
 
 class Gigasecond {
 
-    Gigasecond(LocalDate birthDate) {
+    Gigasecond(LocalDate moment) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    Gigasecond(LocalDateTime birthDateTime) {
+    Gigasecond(LocalDateTime moment) {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
-    LocalDateTime getDate() {
+    LocalDateTime getDateTime() {
         throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
