@@ -1,5 +1,9 @@
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 class Scrabble {
     private String word;
+    private Map<String, Integer> cache = new ConcurrentHashMap<>();
 
     private int getLetterScore(int letter) {
         switch(letter){
@@ -46,7 +50,7 @@ class Scrabble {
     }
 
     int getScore() {
-        return word.chars().map(letter -> this.getLetterScore(letter)).sum();
+        return cache.computeIfAbsent(word, v -> word.chars().map(letter -> this.getLetterScore(letter)).sum());
     }
 
 }
