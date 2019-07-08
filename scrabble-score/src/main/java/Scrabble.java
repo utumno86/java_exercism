@@ -1,7 +1,7 @@
 class Scrabble {
     private String word;
 
-    private int getLetterScore(char letter) {
+    private int getLetterScore(int letter) {
         switch(letter){
             case 'A':
             case 'E':
@@ -46,11 +46,7 @@ class Scrabble {
     }
 
     int getScore() {
-        int score = 0;
-        for(char letter: this.word.toCharArray()){
-            score += getLetterScore(letter);
-        }
-        return score;
+        return word.chars().map(letter -> this.getLetterScore(letter)).sum();
     }
 
 }
