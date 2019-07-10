@@ -2,8 +2,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 class Scrabble {
-    private String word;
-    private Map<String, Integer> cache = new ConcurrentHashMap<>();
+    private final int score;
 
     private int getLetterScore(int letter) {
         switch(letter){
@@ -46,11 +45,15 @@ class Scrabble {
     };
 
     Scrabble(String word) {
-        this.word = word.toUpperCase();
+        this.score = calcuateScore(word.toUpperCase());
     }
 
-    int getScore() {
-        return cache.computeIfAbsent(word, v -> word.chars().map(letter -> this.getLetterScore(letter)).sum());
+    int calcuateScore(String word) {
+        return word.chars().map(letter -> this.getLetterScore(letter)).sum();
+    }
+
+    int getScore(){
+        return score;
     }
 
 }
