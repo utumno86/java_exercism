@@ -1,6 +1,3 @@
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 class Scrabble {
     private final int score;
 
